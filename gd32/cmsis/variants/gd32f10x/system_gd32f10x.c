@@ -60,7 +60,9 @@ OF SUCH DAMAGE.
 //#define __SYSTEM_CLOCK_56M_PLL_HXTAL            (uint32_t)(56000000)
 //#define __SYSTEM_CLOCK_72M_PLL_HXTAL            (uint32_t)(72000000)
 //#define __SYSTEM_CLOCK_96M_PLL_HXTAL            (uint32_t)(96000000)
+#if !defined(__PIO_DONT_SET_CLOCK_SOURCE__) // make this the default unless we tell it not to in the build settings
 #define __SYSTEM_CLOCK_108M_PLL_HXTAL           (uint32_t)(108000000)
+#endif
 
 #define RCU_MODIFY(__delay)     do{                                     \
                                     volatile uint32_t i;                \

@@ -51,7 +51,9 @@
 //#define __SYSTEM_CLOCK_168M_PLL_25M_HXTAL       (uint32_t)(168000000)
 //#define __SYSTEM_CLOCK_200M_PLL_IRC16M          (uint32_t)(200000000)
 //#define __SYSTEM_CLOCK_200M_PLL_8M_HXTAL        (uint32_t)(200000000)
+#if !defined(__PIO_DONT_SET_CLOCK_SOURCE__) // make this the default unless we tell it not to in the build settings
 #define __SYSTEM_CLOCK_200M_PLL_25M_HXTAL       (uint32_t)(200000000)
+#endif
 //#define __SYSTEM_CLOCK_240M_PLL_IRC16M          (uint32_t)(240000000)
 //#define __SYSTEM_CLOCK_240M_PLL_8M_HXTAL        (uint32_t)(240000000)
 //#define __SYSTEM_CLOCK_240M_PLL_25M_HXTAL       (uint32_t)(240000000)

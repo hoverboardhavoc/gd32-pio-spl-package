@@ -48,7 +48,9 @@
 //#define __SYSTEM_CLOCK_HXTAL                    (__HXTAL)
 //#define __SYSTEM_CLOCK_200M_PLL0_HXTAL          (uint32_t)(200000000)
 //#define __SYSTEM_CLOCK_400M_PLL0_HXTAL          (uint32_t)(400000000)
+#if !defined(__PIO_DONT_SET_CLOCK_SOURCE__) // make this the default unless we tell it not to in the build settings
 #define __SYSTEM_CLOCK_600M_PLL0_HXTAL          (uint32_t)(600000000)
+#endif
 
 /*
 Note: the power mode need to match the mcu selection and external power supply circuit.

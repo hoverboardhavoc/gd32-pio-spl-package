@@ -45,7 +45,9 @@
 /* select a system clock by uncommenting the following line */
 //#define __SYSTEM_CLOCK_8M_HXTAL              (__HXTAL)
 //#define __SYSTEM_CLOCK_8M_IRC8M              (__IRC8M)
+#if !defined(__PIO_DONT_SET_CLOCK_SOURCE__) // make this the default unless we tell it not to in the build settings
 #define __SYSTEM_CLOCK_72M_PLL_HXTAL         (uint32_t)(72000000)
+#endif
 //#define __SYSTEM_CLOCK_72M_PLL_IRC8M_DIV2    (uint32_t)(72000000)
 
 #define SEL_IRC8M       0x00

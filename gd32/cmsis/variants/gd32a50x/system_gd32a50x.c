@@ -45,7 +45,9 @@
 //#define __SYSTEM_CLOCK_24M_PLL_HXTAL                    (uint32_t)(24000000)
 //#define __SYSTEM_CLOCK_48M_PLL_HXTAL                    (uint32_t)(48000000)
 //#define __SYSTEM_CLOCK_72M_PLL_HXTAL                    (uint32_t)(72000000)
+#if !defined(__PIO_DONT_SET_CLOCK_SOURCE__) // make this the default unless we tell it not to in the build settings
 #define __SYSTEM_CLOCK_100M_PLL_HXTAL                   (uint32_t)(100000000)
+#endif
 
 #define RCU_MODIFY_DE_3(__delay)  do{                                     \
                                       volatile uint32_t i,reg;            \

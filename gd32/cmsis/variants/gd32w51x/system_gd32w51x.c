@@ -56,7 +56,9 @@
 //#define __SYSTEM_CLOCK_168M_PLLP_40M_HXTAL          (uint32_t)(168000000)
 //#define __SYSTEM_CLOCK_180M_PLLP_IRC16M             (uint32_t)(180000000)
 //#define __SYSTEM_CLOCK_180M_PLLP_25M_HXTAL          (uint32_t)(180000000)
+#if !defined(__PIO_DONT_SET_CLOCK_SOURCE__) // make this the default unless we tell it not to in the build settings
 #define __SYSTEM_CLOCK_180M_PLLP_40M_HXTAL          (uint32_t)(180000000)
+#endif
 
 #define HXTALSTB_DELAY     {                                 \
                               volatile uint32_t i;           \
